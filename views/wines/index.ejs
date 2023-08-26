@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h1>goodWines</h1>
+ <h2>It's always time for good wines!</h2>
+ <table>
+   <thead>
+     <tr>
+       <th>Brand</th>
+       <th>Type</th>
+       <th>Alcohol By Volume</th>
+       <th>Variety</th>
+       <th>Year</th>
+       <th>Reviews</th>
+     </tr>
+   </thead>
+   <tbody>
+    <% wines.forEach(function(wine) { %>
+       <tr>
+         <td><%= wine.brand %></td>
+         <td><%= wine.wineType %></td>
+         <td><%= wine.aBV %></td>
+         <td><%= wine.variety %></td>
+         <td><%= wine.year %></td>
+         <td><%= wine.reviews %></td>
+         <td><a href="/wines/<%= wine._id %>">Wine Details</a></td>
+       </tr>
+       <% }); %>
+   </tbody>
+ </table>
+
+ <%- include('../partials/header') %>

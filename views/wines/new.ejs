@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Wine</h2>
+<form action ="/wines" method="POST">
+    <label>Brand:
+        <input type="text" name="brand">
+    </label>
+    <label>Type:
+        <select name="wineType">
+        <% wineCreationData.wineType.forEach(function(w) { %>
+            <% console.log("w: " + w); %>
+            <option value="<%= w %>"><%= w %></option>
+        <% }) %>
+        </select>
+    </label>
+    <label>Alcohol By Volume:
+        <input type="number" name="aBV" min="0">
+    </label>
+    <label>Variety:
+        <select name="variety">
+        <% wineCreationData.variety.forEach(function(v) { %>
+            <option value="<%= v %>"><%= v %></option>
+        <% }) %>
+        </select>
+    </label>
+    <label>Year:
+        <input name="number" name="year">
+    </label>
+    <button type="submit">SUBMIT</button>
+</form>
+
+<p><%= errorMsg %></p>
+
+
+<%- include('../partials/footer') %>
