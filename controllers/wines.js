@@ -1,4 +1,4 @@
-const brand = require('../models/brand');
+const Brand = require('../models/brand');
 const Wine = require('../models/wine');
 
 module.exports = {
@@ -42,8 +42,8 @@ async function edit(req, res) {
 
 async function show(req, res) {
     const wine = await Wine.findById(req.params.id)
-    const brands = await brand.find({}).sort('name');
-    res.render('wines/show', { wine, brands })
+    // const brands = await brand.find({}).sort('name');
+    res.render('wines/show', { wine })
 }
 
 async function index(req, res) {
@@ -51,8 +51,9 @@ async function index(req, res) {
     res.render('wines/index', { wines });
 }
 
-function newWine(req, res) {
-    const wineCreationData = Wine.getCreationData()
+async function newWine(req, res) {
+    const wineCreationData = await Wine.getCreationData()
+    const brand = await Brand.findOne(req.params.id)
     res.render('wines/new', { errorMsg: '', wineCreationData});
 }
 

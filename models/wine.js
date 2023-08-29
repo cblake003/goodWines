@@ -4,9 +4,13 @@ const brand = require('./brand');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    content: {
+    soberContent: {
       type: String,
       required: true
+    },
+    tipsyContent: {
+        type: String,
+        required: false
     },
     rating: {
       type: Number,
@@ -26,10 +30,11 @@ const reviewSchema = new Schema({
   });
 
 const wineSchema = new Schema({
-    brand: {
-        type: Schema.Types.ObjectId,
-        ref: "Brand"
-    },
+    // brand: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Brand"
+    // },
+    brand: String,
     wineType: {
         type: String,
         enum: ['Red', 'White', 'Rose', 'Sparkling', 'Dessert']

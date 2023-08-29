@@ -23,13 +23,13 @@ async function edit(req, res) {
 
 function getOne(id) {
     id = parseInt(id);
-    return todos.find(todo => todo.id === id);
+    return wines.find(wine => wine.id === id);
   }
 
 function update(req, res) {
     req.body.done = !!req.body.done;
     Todo.update(req.params.id, req.body);
-    res.redirect(`/todos/${req.params.id}`);
+    res.redirect(`/wines/${req.params.id}`);
   }  
 
 async function create(req, res) {

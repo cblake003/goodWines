@@ -29,12 +29,12 @@
 
 <br><h2>Reviews</h2><br>
 <% if(user) { %>
-    <form id="add-review-form" method="POST"
+    <form class="add-review-form" method="POST"
     action="/wines/<%= wine._id %>/reviews">
     <label>Sober Review: </label>
-    <textarea name="content"></textarea>
+    <textarea name="soberContent"></textarea>
     <label>Tipsy Review</label>
-    <textarea name="content"></textarea>
+    <textarea name="tipsyContent"></textarea>
     <label>Rating: </label>
     <select name="rating">
         <option value ="1">1</option>
@@ -54,7 +54,8 @@
         <tr>
           <th>User</th>
           <th>Date</th>
-          <th>Review</th>
+          <th>Sober Review</th>
+          <th>Tipsy Review</th>
           <th>Rating</th>
         </tr>
       </thead>
@@ -65,7 +66,8 @@
           <tr>
             <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
             <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.content %></td>
+            <td><%= r.soberContent %></td>
+            <td><%= r.tipsyContent %></td>
             <td><%= r.rating %></td>
             <td>
               <% if(user?._id.equals(r.user)) { %>

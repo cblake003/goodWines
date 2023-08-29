@@ -8,7 +8,11 @@ const brandSchema = new Schema ({
         unique: true
     },
     location: String,
-    established: Number
+    established: Number,
+    wine: [{
+        type: Schema.Types.ObjectId,
+        ref: "Wine",
+}]
 });
 
 module.exports = mongoose.model('Brand', brandSchema);
