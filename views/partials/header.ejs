@@ -4,14 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poiret+One&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title>goodWines</title>
 </head>
 <body>
   <nav>
+    <img src="https://i.imgur.com/Q9Az54F.png">
     <a href="/">Home</a>
     &nbsp;|&nbsp;
-    <a href="/wines/new">New Wine</a>
-    &nbsp;|&nbsp;
     <a href="/wines">All Wines</a>
+    &nbsp;|&nbsp;
+    <% if (user) { %>
+      <a href="/wines/new">New Wine</a>
+      &nbsp;|&nbsp;
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
+    </nav>
   </nav>

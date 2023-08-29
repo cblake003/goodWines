@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<form action ="/wines" method="POST">
+    <label>Brand:
+        <input type="text" name="brand" value="<%= wine.brand %>">
+    </label>
+    <label>Type:
+        <select name="wineType" value="<%= wine.wineType %>">
+        <% wineCreationData.wineType.forEach(function(w) { %>
+            <option value="<%= w %>"><%= w %></option>
+        <% }) %>
+        </select>
+    </label>
+    <label>Alcohol By Volume:
+        <input type="number" name="aBV" min="0" max="2024" value="<%= wine.aBV %>">
+    </label>
+    <label>Variety:
+        <select name="variety" value="<%= wine.variety %>">
+        <% wineCreationData.variety.forEach(function(v) { %>
+            <option value="<%= v %>"><%= v %></option>
+        <% }) %>
+        </select>
+    </label>
+    <label>Year:
+        <input type="number" name="year" value="<%= wine.year %>">
+    </label>
+    <button type="submit">SUBMIT</button>
+</form>
+
+
+
+<%- include('../partials/footer') %>

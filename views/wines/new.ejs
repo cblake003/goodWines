@@ -8,13 +8,12 @@
     <label>Type:
         <select name="wineType">
         <% wineCreationData.wineType.forEach(function(w) { %>
-            <% console.log("w: " + w); %>
             <option value="<%= w %>"><%= w %></option>
         <% }) %>
         </select>
     </label>
     <label>Alcohol By Volume:
-        <input type="number" name="aBV" min="0">
+        <input type="number" name="aBV" min="0" max="2024">
     </label>
     <label>Variety:
         <select name="variety">
@@ -24,10 +23,11 @@
         </select>
     </label>
     <label>Year:
-        <input name="number" name="year">
+        <input type="number" name="year">
     </label>
     <button type="submit">SUBMIT</button>
 </form>
+
 
 <p><%= errorMsg %></p>
 

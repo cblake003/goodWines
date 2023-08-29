@@ -2,6 +2,28 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const reviewSchema = new Schema({
+    content: {
+      type: String,
+      required: true
+    },
+    rating: {
+      type: Number,
+      min: 1,
+      max: 5,
+      default: 5
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    username: String,
+    userAvatar: String
+  }, {
+    timestamps: true
+  });
+
 const wineSchema = new Schema({
     brand: String,
     wineType: {
@@ -14,7 +36,14 @@ const wineSchema = new Schema({
         enum: ['Cabernet Sauvignon', 'Chardonnay', 'Merlot', 'Sauvignon Blanc', 'Riesling', 'Pinot Noir', 'Malbec', 'Pinot Grigio', 'Zinfandel', "Chateau d'Esclans", "Chateau Miraval Rose", "Belle Glos", 'Port', 'Cherry', 'Ice Wine']
     },
     year: Number,
-    // reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
+      username: String,
+      userAvatar: String
 }, {
     timestamps: true
 });

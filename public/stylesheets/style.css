@@ -1,10 +1,12 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+  background-color: #F79FC1
 }
 
 a {
-  color: #00B7FF;
+  color: white;
 }
 
 .login {
@@ -16,4 +18,78 @@ a {
 
 .login img {
   height: 30px;
+}
+
+* {
+  box-sizing: border-box;
+  color: #3E0715;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+}
+
+body > nav {
+  grid-area: nav;
+  font-family: Helvetica;
+  font-size: 14px;
+  background-color: #3E0715;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+table {
+  text-align: center;
+}
+
+th {
+ border: solid #3E0715;
+ padding: 10px 0;
+ width: 30vmin;
+}
+
+table > a {
+  background-color: #F79FC1;
+}
+
+tr { 
+  background-color: #F79FC1;
+}
+
+#show-page {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+}
+
+#editLink {
+  font-family: Helvetica;
+  padding: 15px;
 }

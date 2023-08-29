@@ -8,7 +8,7 @@ const passport = require('passport');
 // });
 
 router.get('/', function(req, res, next) {
-  res.redirect('/wines');
+  res.render('index', {title: "Home"});
 })
 
 router.get('/auth/google', passport.authenticate(
