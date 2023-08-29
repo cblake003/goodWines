@@ -5,10 +5,10 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/', winesCtrl.index);
 router.get('/new', ensureLoggedIn, winesCtrl.new);
-router.post('/', ensureLoggedIn, winesCtrl.create)
+router.post('/', ensureLoggedIn, winesCtrl.create);
 router.get('/:id', winesCtrl.show);
 router.put('/:id', winesCtrl.update);
-router.get('/:id/edit', winesCtrl.edit);
+router.get('/:id/edit', ensureLoggedIn, winesCtrl.edit);
 router.delete('/:id', ensureLoggedIn, winesCtrl.delete)
 
 

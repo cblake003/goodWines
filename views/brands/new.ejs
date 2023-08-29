@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<div>Before adding, please ensure that the Brand is not in the following list:</div>
+<section id="badge-container">
+  <% brands.forEach(function(brand) { %>
+    <article class="badge"><%= brand.name %></article>
+  <% }) %>
+</section>
+
+<form id="add-brand-form" action="/brands" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <input type="submit" value="Add Brand">
+</form>
+
+
+<%- include('../partials/footer') %>

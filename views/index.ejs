@@ -14,7 +14,21 @@
     }
   </style>
   <body>
-    <h2>It's always time for good wines!</h2>
+    <nav>
+      <img src="https://i.imgur.com/Q9Az54F.png">
+      <a href="/">Home</a>
+      &nbsp;|&nbsp;
+      <a href="/wines">Full Wine List</a>
+      &nbsp;|&nbsp;
+      <% if (user) { %>
+        <a href="/wines/new">New Wine</a>
+        &nbsp;|&nbsp;
+          <a href="/logout">LOG OUT</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+      </nav>
+    <h1>It's always time for good wines!</h1>
     <a href="/wines">Click Here to See Wines</a>
   </body>
 </html>

@@ -1,3 +1,4 @@
+const brand = require('../models/brand');
 const Wine = require('../models/wine');
 
 module.exports = {
@@ -28,16 +29,21 @@ async function deleteWine(req, res) {
 
 async function edit(req, res) {
     const wineCreationData = Wine.getCreationData()
-    const wine = await Wine.findById(req.params.id)
-    res.render('wines/edit', {
-      title: 'Edit Wine Entry',
-      wineCreationData, wine
-    })
+    try {
+        const wine = await Wine.findById(req.params.id)
+        res.render('wines/edit', {
+        title: 'Edit Wine Entry',
+        wineCreationData, wine
+    })} catch (err) {
+        console.log(err);
+        res.redirect('/')
+    }
   }
 
 async function show(req, res) {
     const wine = await Wine.findById(req.params.id)
-    res.render('wines/show', { wine })
+    const brands = await brand.find({}).sort('name');
+    res.render('wines/show', { wine, brands })
 }
 
 async function index(req, res) {

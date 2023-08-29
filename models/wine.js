@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const brand = require('./brand');
 
 const Schema = mongoose.Schema;
 
@@ -25,7 +26,10 @@ const reviewSchema = new Schema({
   });
 
 const wineSchema = new Schema({
-    brand: String,
+    brand: {
+        type: Schema.Types.ObjectId,
+        ref: "Brand"
+    },
     wineType: {
         type: String,
         enum: ['Red', 'White', 'Rose', 'Sparkling', 'Dessert']
