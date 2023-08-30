@@ -3,7 +3,11 @@
 <h2>Enter a New Wine</h2>
 <form action ="/wines" method="POST">
     <label>Brand:
-        <input type="text" name="brand">
+        <select name="brand">
+            <% brands.forEach(function(brand) { %>
+                <option value="<%= brand._id %>"><%= brand.name %></option>
+           <% }) %>
+        </select>
     </label>
     <label>Type:
         <select name="wineType">

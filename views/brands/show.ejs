@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+<section id="brand-show-page">
+    <table>
+        <thead>
+          <tr>
+            <th>Brand</th>
+          </tr>
+        </thead>
+        <tbody>
+               <tr>
+                 <td><%= brand.name %></td>
+                 <td><% wines.forEach(function (wine) { %>
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Type</th>
+                            <th>Alcohol By Volume</th>
+                            <th>Variety</th>
+                            <th>Year</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                               <tr>
+                                 <td><%= wine.wineType %></td>
+                                 <td><%= wine.aBV %></td>
+                                 <td><%= wine.variety %></td>
+                                 <td><%= wine.year %></td>
+                               </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <% }) %>
+               </tr>
+        </tbody>
+    </table>
+</section>
+
+<%- include('../partials/footer') %>

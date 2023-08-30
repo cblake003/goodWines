@@ -11,7 +11,6 @@ module.exports = {
     delete: deleteWine,
 }
 
-
 async function deleteWine(req, res) {
     const wine = await Wine.findOneAndDelete({
     '_id': req.params.id,
@@ -31,9 +30,10 @@ async function edit(req, res) {
     const wineCreationData = Wine.getCreationData()
     try {
         const wine = await Wine.findById(req.params.id)
+        const brands = await Brand.find({})
         res.render('wines/edit', {
         title: 'Edit Wine Entry',
-        wineCreationData, wine
+        wineCreationData, wine, brands
     })} catch (err) {
         console.log(err);
         res.redirect('/')
@@ -41,20 +41,21 @@ async function edit(req, res) {
   }
 
 async function show(req, res) {
-    const wine = await Wine.findById(req.params.id)
-    // const brands = await brand.find({}).sort('name');
+    const wine = await Wine.findById(req.params.id).populate("brand")
+    console.log(wine)
     res.render('wines/show', { wine })
 }
 
 async function index(req, res) {
-    const wines = await Wine.find({});
+    const wines = await Wine.find({}).populate("brand");
+    console.log(wines)
     res.render('wines/index', { wines });
 }
 
 async function newWine(req, res) {
     const wineCreationData = await Wine.getCreationData()
-    const brand = await Brand.findOne(req.params.id)
-    res.render('wines/new', { errorMsg: '', wineCreationData});
+    const brands = await Brand.find({})
+    res.render('wines/new', { errorMsg: '', wineCreationData, brands });
 }
 
 async function create(req, res) {

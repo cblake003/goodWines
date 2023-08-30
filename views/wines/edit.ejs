@@ -2,7 +2,11 @@
 
 <form action ="/wines" method="POST">
     <label>Brand:
-        <input type="text" name="brand" value="<%= wine.brand %>">
+        <select name="brand">
+            <% brands.forEach(function(brand) { %>
+                <option value="<%= brand._id %>"><%= brand.name %></option>
+           <% }) %>
+        </select>
     </label>
     <label>Type:
         <select name="wineType" value="<%= wine.wineType %>">

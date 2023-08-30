@@ -30,11 +30,10 @@ const reviewSchema = new Schema({
   });
 
 const wineSchema = new Schema({
-    // brand: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Brand"
-    // },
-    brand: String,
+    brand: {
+        type: Schema.Types.ObjectId,
+        ref: "Brand"
+    },
     wineType: {
         type: String,
         enum: ['Red', 'White', 'Rose', 'Sparkling', 'Dessert']

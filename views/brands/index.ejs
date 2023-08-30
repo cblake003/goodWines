@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1>goodWines</h1>
+<h1>Browse All Brands</h1>
 
  <table>
    <thead>
@@ -14,14 +14,9 @@
      </tr>
    </thead>
    <tbody>
-    <% wines.forEach(function(wine) { %>
+    <% brands.forEach(function(brand) { %>
        <tr>
-         <td><a href="/brands/<%= wine.brand._id %>/show"><%= wine.brand.name %>></a></td>
-         <td><%= wine.wineType %></td>
-         <td><%= wine.aBV %></td>
-         <td><%= wine.variety %></td>
-         <td><%= wine.year %></td>
-         <td><a href="/wines/<%= wine._id %>">Wine Details</a></td>
+         <td><a href="/brands/<%= brand._id %>/show"><%= brand.name %>></a></td>
        </tr>
        <% }); %>
    </tbody>
