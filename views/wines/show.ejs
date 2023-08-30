@@ -35,6 +35,8 @@
     <textarea name="soberContent"></textarea>
     <label>Tipsy Review</label>
     <textarea name="tipsyContent"></textarea>
+    <label>Next-Day Hangover Review</label>
+    <textarea name="hangoverContent"></textarea>
     <label>Rating: </label>
     <select name="rating">
         <option value ="1">1</option>
@@ -56,6 +58,7 @@
           <th>Date</th>
           <th>Sober Review</th>
           <th>Tipsy Review</th>
+          <th>Next-Day Hangover Review</th>
           <th>Rating</th>
         </tr>
       </thead>
@@ -68,6 +71,7 @@
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.soberContent %></td>
             <td><%= r.tipsyContent %></td>
+            <td><%= r.hangoverContent %></td>
             <td><%= r.rating %></td>
             <td>
               <% if(user?._id.equals(r.user)) { %>

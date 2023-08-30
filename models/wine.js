@@ -12,6 +12,10 @@ const reviewSchema = new Schema({
         type: String,
         required: false
     },
+    hangoverContent: {
+        type: String,
+        required: false
+    },
     rating: {
       type: Number,
       min: 1,
