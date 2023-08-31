@@ -5,14 +5,18 @@
  <table>
    <thead>
      <tr>
-       <th id="brandIdxTitle">Brands</th>
+       <th class="brandIdx">Brands</th>
+       <th class="brandIdx">Location</th>
+       <th class="brandIdx">Established</th>
      </tr>
    </thead>
    <tbody>
     <% brands.forEach(function(brand) { %>
        <tr>
          <td><a href="/brands/<%= brand._id %>/show" id="brandIdx"><%= brand.name %>></a></td>
-       </tr>
+         <td><%= brand.location %></td>
+         <td><%= brand.established %></td>
+        </tr>
        <% }); %>
    </tbody>
    <style id="bIdxImg">

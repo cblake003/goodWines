@@ -4,12 +4,18 @@
 <section id="badge-container">
   <% brands.forEach(function(brand) { %>
     <article class="badge"><%= brand.name %></article>
+    <article class="badge"><%= brand.location %></article>
+    <article class="badge"><%= brand.established %></article>
   <% }) %>
 </section>
 
 <form id="add-brand-form" action="/brands" method="POST">
   <label>Name:</label>
-  <input type="text" name="name">
+  <input type="text" name="name"
+  <label>Location:</label>
+  <input type="text" name="location">
+  <label>Established:</label>
+  <input type="text" name="established">
   <input type="submit" value="Add Brand">
 </form>
 

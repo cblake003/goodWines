@@ -1,15 +1,18 @@
 <%- include('../partials/header') %>
 
-<section id="brand-show-page">
-    <table>
+<section id="brand-show-page"> <div id="bShowTitle">
+    <table class="bTHead">
         <thead>
-          <tr>
-            <th>Brand</th>
-          </tr>
+            <th class="bTHead">
+            Brand: <%= brand.name %>
+            </th>
         </thead>
+    </table>
+    </div>
+    <table>
         <tbody>
+            <div id="bShowtable">
                <tr>
-                 <td><%= brand.name %></td>
                  <td><% wines.forEach(function (wine) { %>
                     <table>
                         <thead>
@@ -28,6 +31,7 @@
                                  <td><%= wine.year %></td>
                                </tr>
                         </tbody>
+                    </div>
                     </table>
                 </td>
                 <% }) %>
@@ -35,5 +39,15 @@
         </tbody>
     </table>
 </section>
+
+<style>
+    body {
+      background-image: url("/images/Brand-Show.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+      background-position: center bottom;
+    }
+  </style>
 
 <%- include('../partials/footer') %>

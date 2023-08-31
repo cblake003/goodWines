@@ -45,7 +45,7 @@
         <option value ="4">4</option>
         <option value ="5" selected>5</option>
     </select>
-    <input type="submit" value="Add Review">
+    <input type="submit" class="fillelipse" value="Add Review">
     </form>
 <% } %>
 
@@ -76,7 +76,7 @@
             <td>
               <% if(user?._id.equals(r.user)) { %>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
+                  <button class="fillelipse" type="submit">X</button>
                 </form>
               <% } %>
             </td>
@@ -87,14 +87,6 @@
           <td><strong><%= (total / wine.reviews.length).toFixed(1) %></strong></td>
         </tr>
       </tbody>
-<style>
-    body {
-      background-image: url("/images/New-Wine-Page.svg");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: contain;
-      background-position: center;
-    }
   </style>
     </table>
   <% } else { %>
@@ -103,9 +95,18 @@
 
   <% if(user) { %>
   <form action="/wines/<%= wine._id %>?_method=DELETE" method="POST">
-    <button type="submit">DELETE WINE</button>
+    <button class="fillelipse" type="submit">DELETE WINE</button>
     </form>
 <% } %>
 
+<style>
+    body {
+      background-image: url("/images/Wine-Show-Page.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+      background-position: center bottom;
+    }
+  </style>
 
   <%- include('../partials/footer') %>

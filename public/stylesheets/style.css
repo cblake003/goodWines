@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font-family: 'Great Vibes', cursive;
-  font-size: 20px;
+  font-size: 40px;
   background-color: #F79FC1
 }
 
@@ -98,10 +98,62 @@ tr {
   font-size: 30px;
 }
 
-#brandIdxTitle {
+.brandIdx {
   font-size: 40px;
 }
 
 #bIdxImg {
   margin-top: 100px;
+}
+
+#bShowTitle {
+  width: 100%;
+}
+
+#bShowTable {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bTHead {
+  width: 100%;
+}
+
+button {
+  position: relative;
+  padding: 20px 35px;
+  margin: 10px;
+  border: 2px solid white;
+  background: #F79FC1;
+  @include transition(all 300ms);
+  z-index: 1;
+  color: black;
+  font-weight: 700;
+  overflow: hidden;
+  
+  &:hover {
+    border-color: #F79FC1;
+    color: #F79FC1;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0; bottom: 0; left: 0; right: 0;
+    @include transition(all 300ms);
+    background: white;
+  }
+}
+
+.fillelipse::after {
+  top: -25%;
+  left: -25%;
+  height: 150%;
+  width: 150%;
+  @include transform(scale(0));
+  @include border-radius(50%);
+}
+.fillelipse:hover::after {
+  @include transform(scale(1,1));
 }
