@@ -93,3 +93,15 @@ tr {
   font-family: Helvetica;
   padding: 15px;
 }
+
+#brandIdx {
+  font-size: 30px;
+}
+
+#brandIdxTitle {
+  font-size: 40px;
+}
+
+#bIdxImg {
+  margin-top: 100px;
+}

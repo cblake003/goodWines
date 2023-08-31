@@ -87,6 +87,15 @@
           <td><strong><%= (total / wine.reviews.length).toFixed(1) %></strong></td>
         </tr>
       </tbody>
+<style>
+    body {
+      background-image: url("/images/New-Wine-Page.svg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+      background-position: center;
+    }
+  </style>
     </table>
   <% } else { %>
     <h5>No Reviews Yet</h5>
@@ -97,5 +106,6 @@
     <button type="submit">DELETE WINE</button>
     </form>
 <% } %>
+
 
   <%- include('../partials/footer') %>

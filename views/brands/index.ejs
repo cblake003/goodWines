@@ -5,28 +5,23 @@
  <table>
    <thead>
      <tr>
-       <th>Brand</th>
-       <th>Type</th>
-       <th>Alcohol By Volume</th>
-       <th>Variety</th>
-       <th>Year</th>
-       <th>Information</th>
+       <th id="brandIdxTitle">Brands</th>
      </tr>
    </thead>
    <tbody>
     <% brands.forEach(function(brand) { %>
        <tr>
-         <td><a href="/brands/<%= brand._id %>/show"><%= brand.name %>></a></td>
+         <td><a href="/brands/<%= brand._id %>/show" id="brandIdx"><%= brand.name %>></a></td>
        </tr>
        <% }); %>
    </tbody>
-   <style>
+   <style id="bIdxImg">
     body {
-      background-image: url("/images/Cursive-Wine-Home.svg");
+      background-image: url("/images/PNG-Brand-Index.png");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: contain;
-      background-position: center;
+      background-position: center bottom;
     }
   </style>
  </table>

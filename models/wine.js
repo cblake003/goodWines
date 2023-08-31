@@ -40,12 +40,12 @@ const wineSchema = new Schema({
     },
     wineType: {
         type: String,
-        enum: ['Red', 'White', 'Rose', 'Sparkling', 'Dessert']
+        enum: ['Red', 'White', 'Rose', 'Sparkling', 'Fruit', 'Dessert']
     },
     aBV: Number,
     variety: {
         type: String,
-        enum: ['Cabernet Sauvignon', 'Chardonnay', 'Merlot', 'Sauvignon Blanc', 'Riesling', 'Pinot Noir', 'Malbec', 'Pinot Grigio', 'Zinfandel', "Chateau d'Esclans", "Chateau Miraval Rose", "Belle Glos", 'Port', 'Cherry', 'Ice Wine']
+        enum: ['Cabernet Sauvignon', 'Chardonnay', 'Merlot', 'Sauvignon Blanc', 'Riesling', 'Pinot Noir', 'Malbec', 'Pinot Grigio', 'Zinfandel', "Chateau d'Esclans", "Chateau Miraval Rose", 'Sweet Red', 'Sweet Grapefruit Rose', "Belle Glos", 'Port', 'Cherry', 'Sweet Peach', 'Ice Wine']
     },
     year: Number,
     reviews: [reviewSchema],

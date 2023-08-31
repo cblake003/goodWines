@@ -28,7 +28,7 @@ function getOne(id) {
 
 function update(req, res) {
     req.body.done = !!req.body.done;
-    Todo.update(req.params.id, req.body);
+    Review.update(req.params.id, req.body);
     res.redirect(`/wines/${req.params.id}`);
   }  
 
