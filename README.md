@@ -4,7 +4,7 @@ As a software engineering fellow with General Assembly, our second project was t
 
 <h1>Technologies Used</h1>
 
-Javascript, HTML, CSS, Express.JS, MongoDB, Github, and Node.js were used in the creating of this game.
+Javascript, HTML, CSS, Express.JS, MongoDB, Github, and Node.js were used in the creation of this app.
 
 <h1>Site Navigation</h1>
 
