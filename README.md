@@ -2,7 +2,9 @@
 
 As a software engineering fellow with General Assembly, our second project was to create a working browser application with complete CRUD capability as well as Oauthentication. I'm a huge fan of wine and learning all about it, so I knew it would be fun to create a wine based app that users could share to give ratings, reviews, and find new wines to try. Wines consist of their brand, year created, type, variety, and alcohol content. Each wine entry can be edited or deleted by the creator of the wine as long as that creator is logged in. Anyone who is logged in can also create their own reviews for that wine and delete their review if they so choose. Logged in users are also able to add new brands for the wine list as well. Anyone on the page can browse wines by brand or by the full wine list.
 
-Javascript, HTML, CSS, and Node.js were used in the creating of this game.
+<h1>Technologies Used</h1>
+
+Javascript, HTML, CSS, Express.JS, MongoDB, Github, and Node.js were used in the creating of this game.
 
 <h1>Site Navigation</h1>
 
