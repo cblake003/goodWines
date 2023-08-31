@@ -16,7 +16,7 @@
    <tbody>
     <% wines.forEach(function(wine) { %>
        <tr>
-         <td><a href="/brands/<%= wine.brand._id %>/show"><%= wine.brand.name %>></a></td>
+         <td><a href="/brands/<%= wine.brand._id %>/show"></a><%= wine.brand.name %>></a></td>
          <td><%= wine.wineType %></td>
          <td><%= wine.aBV %></td>
          <td><%= wine.variety %></td>
