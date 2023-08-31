@@ -54,7 +54,7 @@ If a user wants to create their own brand, they can click "New Brand" at the top
 
 ![Imgur](https://i.imgur.com/xJcCSGG.png)
 
-Click <a href="https://cblake003.github.io/Blackjack/">here</a> to check out my version of goodWines!
+Click <a href="https://goodwines-9bf6c962c400.herokuapp.com/">here</a> to check out my version of goodWines!
 <h1>Next Steps:</h1>
 
 I plan to update this app with several ideas. First, I'll be implementing an API so users can search a full list of wines and brands without having to manually enter each one. Then, I'd like to add a few more styling updates in regards to buttons and fonts. Finally, I'll be adding user profiles with their specific wines and a favorites section for those wines, as well as allowing users to recommend wines based on a recommendation page.
