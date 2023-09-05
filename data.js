@@ -18,3 +18,5 @@ exports.brands = [
     {brand: 'Winking Owl', wineType: 'Fruit', aBV: 7.5, variety: 'Moscato', year: 2017},
     {brand: 'Winking Owl', wineType: 'Fruit', aBV: 7.5, variety: 'Sweet Red', year: 2016},
   ];
+
+//   create brand reference then loop through brand ids for the wine schema
